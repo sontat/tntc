@@ -9,12 +9,12 @@ import org.scilab.forge.jlatexmath.TeXIcon;
 
 public class CalcButton extends JButton {
 
-	/**
-	 * Subclass of JButton, allows for custom background color for default,
-	 * mouse hover, and mouse click.
-	 */
+  /**
+   * Subclass of JButton, allows for custom background color for default,
+   * mouse hover, and mouse click.
+   */
 
-	private Color hoverBackgroundColor;
+  private Color hoverBackgroundColor;
   private Color pressedBackgroundColor;
  
   public CalcButton(String text) {
