@@ -577,7 +577,7 @@ public class CalcFunctions {
       return null;
     if (a.equals(BigInteger.ZERO))
       return BigInteger.ONE;
-    if (primes.contains(a) || isPrime(a).equals(BigInteger.ONE))
+    if (primes.contains(a) || isPrime(a))
       return newPow(a, k).subtract(BigInteger.ONE);
     Set<BigInteger> factors = factor(a).keySet();
     BigInteger numer = newPow(a, k);
@@ -640,7 +640,7 @@ public class CalcFunctions {
       return BigInteger.ONE;
     if (n.equals(FOUR))
       return TWO;
-    if (primes.contains(n)|| isPrime(n).equals(BigInteger.ONE))
+    if (primes.contains(n) || isPrime(n))
       return n.subtract(BigInteger.ONE);
     if (n.getLowestSetBit() + 1 == n.bitLength()) return n.divide(FOUR);
     Map<BigInteger, BigInteger> factors = factor(n);
@@ -782,14 +782,11 @@ public class CalcFunctions {
     BigInteger s = BigInteger.valueOf(4);
     int p = n.bitCount();
     // If the n in 2^n - 1 is composite, 2^n - 1 is composite
-    if (isPrime(BigInteger.valueOf(p)).equals(BigInteger.ZERO)) return false;
+    if (!isPrime(BigInteger.valueOf(p))) return false;
     for (int i = 0; i < p - 2; i++) {
       s = (s.pow(2).subtract(TWO).mod(n));
     }
-    if (s.equals(BigInteger.ZERO))
-      return true;
-    else
-      return false;
+    return (s.equals(BigInteger.ZERO));
   }
 
   /**
