@@ -587,7 +587,7 @@ public class CalcInterface implements Runnable {
     about.addActionListener(e -> {
       JOptionPane.showMessageDialog(null,
           "<html><h2>Tyler's Number Theory Calculator</h2>"
-          + "<p>Version 1.0</p>"
+          + "<p>Version 1.0.1</p>"
           + "<p>Written by Tyler Sontag</p>"
           + "<p><a href='http://www.tylersontag.com'>http://www.tylersontag.com</a></p></html>",
           "About", JOptionPane.PLAIN_MESSAGE);

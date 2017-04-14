@@ -740,11 +740,12 @@ public class CalcFunctions {
     int r = n.getLowestSetBit();
     d = nM.shiftRight(r);
     witnessCeiling = witnesses.higherKey(n);
-    boolean con = false;
+    boolean con;
     if (witnessCeiling != null) {
       List<BigInteger> nWitnesses = witnesses.get(witnessCeiling);
       BigInteger x;
       for (BigInteger a : nWitnesses) {
+        con = false;
         x = a.modPow(d, n);
         if (x.equals(BigInteger.ONE) || x.equals(n.subtract(BigInteger.ONE))) continue;
         for (int j = 0; j < r - 1; j++) {
